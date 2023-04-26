@@ -1,0 +1,54 @@
+<div class="flex justify-end">
+  <div>
+    <button
+      class="bg-purple-800 text-white flex justify-between items-center m-3 px-4 py-2 rounded-md"
+    >
+      <span class="material-icons">add</span>
+      Add Team
+    </button>
+  </div>
+</div>
+
+<div class="m-5">
+  <div class="grid lg:grid-cols-3 gap-10">
+    <ng-container *ngFor="let item of teams">
+      <div class="shadow-lg rounded-md cursor-pointer">
+        <div class="flex justify-between mt-5">
+          <div class="flex ml-5">
+            <span class="material-icons">person_outline</span>
+            <div class="font-semibold ml-3">
+              {{ item.firstName + " " + item.lastName }}
+            </div>
+          </div>
+          <span class="material-icons mr-3">more_vert</span>
+        </div>
+        <div class="flex ml-5 mr-52 justify-between items-center">
+          <p class="flex justify-between mt-2 items-center">
+            <span class="material-icons mr-2">groups</span>{{ item.dept }}
+          </p>
+          <p class="flex justify-between mb-2 items-center">
+            <span class="material-icons mr-2">bookmarks</span>{{ item.role }}
+          </p>
+        </div>
+        <div class="bg-purple-50 text-gray-400">
+          <div class="ml-5 text-xs">
+            <p class="flex items-center">
+              <span class="material-icons mr-3 text-xs">mail</span
+              >{{ item.email }}
+            </p>
+            <p class="flex items-center">
+              <span class="material-icons mr-3 text-xs">phone</span
+              >{{ item.contact }}
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center ml-5 text-xs">
+          <p>Status:</p>
+          <button class="bg-green-200 text-black p-1 w-16 mb-2 ml-3 rounded-md">
+            Active
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
