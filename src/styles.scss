@@ -1,9 +1,10 @@
-
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import '~@angular/material/prebuilt-themes/purple-green.css';
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field
+  .mdc-notched-outline__notch {
+  border-right-style: hidden;
+}
