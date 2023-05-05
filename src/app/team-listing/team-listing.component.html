@@ -1,6 +1,7 @@
 <div class="flex justify-end">
   <div>
     <button
+      (click)="onAdd()"
       class="bg-purple-800 text-white flex justify-between items-center m-3 px-4 py-2 rounded-md"
     >
       <span class="material-icons">add</span>
@@ -20,7 +21,9 @@
               {{ item.firstName + " " + item.lastName }}
             </div>
           </div>
-          <span class="material-icons mr-3">more_vert</span>
+          <button [matMenuTriggerFor]="menu">
+            <span class="material-icons mr-3">more_vert</span>
+          </button>
         </div>
         <div class="flex ml-5 mr-52 justify-between items-center">
           <p class="flex justify-between mt-2 items-center">
@@ -49,6 +52,13 @@
           </button>
         </div>
       </div>
+      <mat-menu #menu="matMenu">
+        <button (click)="editList(item)" mat-menu-item>Edit</button>
+        <button mat-menu-item>Deactivate Member</button>
+        <button (click)="delecteList(item.id)" mat-menu-item>
+          Delete Member
+        </button>
+      </mat-menu>
     </ng-container>
   </div>
 </div>
